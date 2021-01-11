@@ -3,12 +3,26 @@ import csv
 import pandas
 import elements
 
-atNum = int(input("Atomic number: "))
+while True:
+    # Search Options
+    print("Search options: ")
+    print("Search by Atomic Symbol")
+    print("Search by Atomic Number")
+    print("Search by Atomic Weight")
+    print("Search by English Name")
+    print("Search by Dutch Name")
 
-df = pandas.read_csv("elements.csv")
+    searchOption = input().lower()
 
-print(f"Atomic Symbol: {df.loc[atNum - 1].atSym}")
-print(f"Atomic Number: {df.loc[atNum - 1].atNum}")
-print(f"Atomic Weight: {df.loc[atNum - 1].atWeight}")
-print(f"English Name:  {df.loc[atNum - 1].ENname}")
-print(f"Dutch Name:    {df.loc[atNum - 1].NLname}")
+    if searchOption == "atomic number":
+        # Search by atomic number
+        atNum = int(input("Atomic number: "))
+
+        df = pandas.read_csv("elements.csv", index_col="atNum")
+
+        print(f"Atomic Symbol: {df.iloc[atNum - 1].atSym}")
+        print(f"Atomic Weight: {df.iloc[atNum - 1].atWeight}")
+        print(f"English Name:  {df.iloc[atNum - 1].ENname}")
+        print(f"Dutch Name:    {df.iloc[atNum - 1].NLname}")
+        
+        print("=====================================")
