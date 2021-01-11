@@ -1,10 +1,14 @@
 from __init__ import element
 import csv
+import pandas
 import elements
 
-elementList = []
+atNum = int(input("Atomic number: "))
 
-with open("elements.csv", "r") as f:
-    reader = csv.reader(f)
-    for row in reader:
-        elementList.append(element(row[0], row[1], row[2], row[3], row[4]))
+df = pandas.read_csv("elements.csv")
+
+print(f"Atomic Symbol: {df.loc[atNum - 1].atSym}")
+print(f"Atomic Number: {df.loc[atNum - 1].atNum}")
+print(f"Atomic Weight: {df.loc[atNum - 1].atWeight}")
+print(f"English Name:  {df.loc[atNum - 1].ENname}")
+print(f"Dutch Name:    {df.loc[atNum - 1].NLname}")
