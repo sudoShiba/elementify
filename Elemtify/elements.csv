@@ -4,3 +4,16 @@ Li,3,6.94,lithium,lithium
 Be,4,9.0122,beryllium,beryllium
 B,5,10.81,boron,boor
 C,6,12.011,carbon,koolstof
+N,7,14.007,nitrogen,stikstof
+O,8,15.999,oxigen,zuurstof
+F,9,18.998,fluorine,fluor
+Ne,10,20.180,neon,neon
+Na,11,22.990,sodium,natrium
+Mg,12,24.305,magnesium,magnesium
+Al,13,26.982,aluminium,aluminium
+Si,14,28.085,silicon,silicium
+P,15,30.974,phosphorus,fosfor
+S,16,32.06,sulfur,zwavel
+Cl,17,35.45,chlorine,chloor
+Ar,18,39.948,argon,argon
+K,19,39.098,potassium,kalium
