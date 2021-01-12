@@ -1,7 +1,17 @@
-from __init__ import element
 import csv
 import pandas
 import elements
+
+df = pandas.read_csv("elements.csv")
+
+# mapping between search options and columns in the DataFrame
+d = {
+    'atomic symbol': 'atSym',
+    'atomic number': 'atNum',
+    'atomic weight': 'atWeight',
+    'english name': 'ENname',
+    'dutch name': 'NLname',
+}
 
 while True:
     # Search Options
@@ -12,17 +22,17 @@ while True:
     print("Search by English Name")
     print("Search by Dutch Name")
 
+    # get search option and select the right column to search on
+    # we're converting the column to lowercase strings, so that
+    # we can conveniently find it later
     searchOption = input().lower()
-
-    if searchOption == "atomic number":
-        # Search by atomic number
-        atNum = int(input("Atomic number: "))
-
-        df = pandas.read_csv("elements.csv", index_col="atNum")
-
-        print(f"Atomic Symbol: {df.iloc[atNum - 1].atSym}")
-        print(f"Atomic Weight: {df.iloc[atNum - 1].atWeight}")
-        print(f"English Name:  {df.iloc[atNum - 1].ENname}")
-        print(f"Dutch Name:    {df.iloc[atNum - 1].NLname}")
-        
-        print("=====================================")
+    df_ix = df[d[searchOption]].astype(str).str.lower()
+    
+    # get value to search for, convert to lowercase and find row
+    searchValue = input().lower()
+    row = df[df_ix==searchValue]
+    
+    # rename columns to human-readable based on our mapping and print
+    print("==========================================================================")
+    print(row.rename(columns={v: k for k, v in d.items()}))
+    print("==========================================================================")
