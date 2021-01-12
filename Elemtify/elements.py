@@ -25,11 +25,11 @@ while True:
     # get search option and select the right column to search on
     # we're converting the column to lowercase strings, so that
     # we can conveniently find it later
-    searchOption = input().lower()
+    searchOption = input("Search option: ").lower()
     df_ix = df[d[searchOption]].astype(str).str.lower()
     
     # get value to search for, convert to lowercase and find row
-    searchValue = input().lower()
+    searchValue = input("Search query: ").lower()
     row = df[df_ix==searchValue]
     
     # rename columns to human-readable based on our mapping and print
