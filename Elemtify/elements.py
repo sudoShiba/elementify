@@ -1,8 +1,7 @@
 import csv
 import pandas
-import elements
 
-df = pandas.read_csv("elements.csv")
+df = pandas.read_csv("elementsList.csv")
 
 # mapping between search options and columns in the DataFrame
 d = {
