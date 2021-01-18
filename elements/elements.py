@@ -1,4 +1,3 @@
-import csv
 import pandas
 
 df = pandas.read_csv("elementsList.csv")
