@@ -33,5 +33,5 @@ while True:
     
     # rename columns to human-readable based on our mapping and print
     print("==========================================================================")
-    print(row.rename(columns={v: k for k, v in d.items()}))
+    print(row.rename(columns={v: k for k, v in d.items()}).to_string(index=False))
     print("==========================================================================")
