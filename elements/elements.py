@@ -25,12 +25,14 @@ while True:
     # we can conveniently find it later
     searchOption = input("Search option: ").lower()
     df_ix = df[d[searchOption]].astype(str).str.lower()
-    
+
     # get value to search for, convert to lowercase and find row
     searchValue = input("Search query: ").lower()
-    row = df[df_ix==searchValue]
-    
+    row = df[df_ix == searchValue]
+
     # rename columns to human-readable based on our mapping and print
-    print("==========================================================================")
-    print(row.rename(columns={v: k for k, v in d.items()}).to_string(index=False))
-    print("==========================================================================")
+    print("=================================================================")
+    print(row.rename(columns={
+        v: k for k, v in d.items()
+        }).to_string(index=False))
+    print("=================================================================")
