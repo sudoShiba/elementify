@@ -20,19 +20,24 @@ while True:
     print("Search by English Name")
     print("Search by Dutch Name")
 
-    # get search option and select the right column to search on
-    # we're converting the column to lowercase strings, so that
-    # we can conveniently find it later
-    searchOption = input("Search option: ").lower()
-    df_ix = df[d[searchOption]].astype(str).str.lower()
+    try:
+        # get search option and select the right column to search on
+        # converting the column to lowercase strings, so that
+        # I can conveniently find it later
+        searchOption = input("Search option: ").lower()
+        df_ix = df[d[searchOption]].astype(str).str.lower()
 
-    # get value to search for, convert to lowercase and find row
-    searchValue = input("Search query: ").lower()
-    row = df[df_ix == searchValue]
+        # get value to search for, convert to lowercase and find row
+        searchValue = input("Search query: ").lower()
+        row = df[df_ix == searchValue]
+        
+        # rename columns to human-readable based on our mapping and print
+        print("=================================================================")
+        print(row.rename(columns={
+            v: k for k, v in d.items()
+            }).to_string(index=False))
+        print("=================================================================")
+        
+    except KeyError:
+        print("You can't use that as a search option/query")
 
-    # rename columns to human-readable based on our mapping and print
-    print("=================================================================")
-    print(row.rename(columns={
-        v: k for k, v in d.items()
-        }).to_string(index=False))
-    print("=================================================================")
