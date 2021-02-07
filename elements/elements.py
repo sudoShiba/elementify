@@ -49,3 +49,9 @@ while True:
     except:
         # default exception
         lines("Something went wrong, check if you made any spelling errors")
+
+    # asks if user wants to do another search
+    if input("Search another? (y/n)").lower() == "y":
+        continue
+    else:
+        break
