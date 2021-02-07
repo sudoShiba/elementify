@@ -49,4 +49,3 @@ while True:
     except:
         # default exception
         lines("Something went wrong, check if you made any spelling errors")
-
