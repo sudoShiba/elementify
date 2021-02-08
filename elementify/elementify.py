@@ -1,6 +1,6 @@
 import pandas
 
-df = pandas.read_csv("elementsList.csv")
+df = pandas.read_csv("elementify/elementsList.csv")
 
 
 # declaring lines
@@ -38,19 +38,15 @@ while True:
         # get value to search for, convert to lowercase and find row
         searchValue = input("Search query: ").lower()
         row = df[df_ix == searchValue]
-        
+
         # renaming columns to human-readable based on our mapping and print
         lines(row.rename(columns={
             v: k for k, v in d.items()
             }).to_string(index=False))
 
     except KeyError:
-        # tells user that an invalid search option/query was used    
+        # tells user that an invalid search option/query was used
         lines("You can't use that as a search option/query")
-
-    except:
-        # default exception
-        lines("Something went wrong, check if you made any spelling errors")
 
     # asks if user wants to do another search
     if input("Search another? (y/n)").lower() == "y":
