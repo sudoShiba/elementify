@@ -49,7 +49,7 @@ while True:
         lines("You can't use that as a search option/query")
 
     # asks if user wants to do another search
-    if input("Search another? (y/n)").lower() == "y":
+    if input("Search another? (y/n) ").lower() == "y":
         continue
     else:
         break
