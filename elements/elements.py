@@ -2,11 +2,13 @@ import pandas
 
 df = pandas.read_csv("elementsList.csv")
 
+
 # declaring lines
 def lines(input: str):
     print("=================================================================")
     print(input)
     print("=================================================================")
+
 
 # mapping between search options and columns in the DataFrame
 d = {
