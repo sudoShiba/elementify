@@ -1,6 +1,6 @@
 import pandas
 
-df = pandas.read_csv("elementify/elementsList.csv")
+df = pandas.read_csv("elementsList.csv")
 
 
 # declaring lines
