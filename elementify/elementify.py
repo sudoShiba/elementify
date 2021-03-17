@@ -15,12 +15,12 @@ d = {
     "atomic symbol": "atSym",
     "atomic number": "atNum",
     "atomic weight": "atWeight",
-    "english name":"ENname",
+    "english name": "ENname",
     "dutch name": "NLname",
     "1": "atSym",
     "2": "atNum",
     "3": "atWeight",
-    "4":"ENname",
+    "4": "ENname",
     "5": "NLname"
 }
 
