@@ -1,6 +1,6 @@
 import pandas
 
-df = pandas.read_csv("elementify/elementsList.csv")
+df = pandas.read_csv("elementsList.csv")
 
 
 # declaring lines
@@ -12,21 +12,26 @@ def lines(input):
 
 # mapping between search options and columns in the DataFrame
 d = {
-    'atomic symbol': 'atSym',
-    'atomic number': 'atNum',
-    'atomic weight': 'atWeight',
-    'english name': 'ENname',
-    'dutch name': 'NLname',
+    "atomic symbol": "atSym",
+    "atomic number": "atNum",
+    "atomic weight": "atWeight",
+    "english name":"ENname",
+    "dutch name": "NLname",
+    "1": "atSym",
+    "2": "atNum",
+    "3": "atWeight",
+    "4":"ENname",
+    "5": "NLname"
 }
 
 while True:
     # Search Options
     print("Search options: ")
-    print("Search by Atomic Symbol")
-    print("Search by Atomic Number")
-    print("Search by Atomic Weight")
-    print("Search by English Name")
-    print("Search by Dutch Name")
+    print("1. Search by Atomic Symbol")
+    print("2. Search by Atomic Number")
+    print("3. Search by Atomic Weight")
+    print("4. Search by English Name")
+    print("5. Search by Dutch Name")
 
     try:
         # get search option and select the right column to search on
