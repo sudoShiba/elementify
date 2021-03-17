@@ -4,7 +4,7 @@ df = pandas.read_csv("elementify/elementsList.csv")
 
 
 # declaring lines
-def lines(input: str):
+def lines(input):
     print("=================================================================")
     print(input)
     print("=================================================================")
