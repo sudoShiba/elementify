@@ -12,16 +12,16 @@ def lines(input):
 
 # mapping between search options and columns in the DataFrame
 d = {
+    "1": "atSym",
+    "2": "atNum",
+    "3": "atWeight",
+    "4": "ENname",
+    "5": "NLname",
     "atomic symbol": "atSym",
     "atomic number": "atNum",
     "atomic weight": "atWeight",
     "english name": "ENname",
     "dutch name": "NLname",
-    "1": "atSym",
-    "2": "atNum",
-    "3": "atWeight",
-    "4": "ENname",
-    "5": "NLname"
 }
 
 while True:
